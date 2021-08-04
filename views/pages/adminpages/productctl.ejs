@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <%- include('../../partials/head') -%>
+        <%- include('../../partials/style') -%>
+</head>
+<body>
+    <%- include('../../partials/admin/adminavbar') -%>
+
+    <div class="tab-content tabposition">
+        <div id="ProductCtrl">
+            <div class="rows space-around">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProduct">新增</button>
+                <h2>商品管理</h2>
+                <div class="searchID">
+                    <input id="searchPro" type="text" placeholder="請輸入查詢商品ID" />
+                    <button class="btn btn-success" id="QueryPro" onclick="QueryProduct()">查詢</button>
+                </div>
+            </div>
+            <!-- query table -->
+            <% if(data.length){ %>
+                <table class="table overflow-scroll">
+                    <thead>
+                        <tr>
+                            <th>商品ID</th>
+                            <th>商品名稱</th>
+                            <th>商品描述</th>
+                            <th>商品價格</th>
+                            <th>進貨日</th>
+                            <th>商品圖</th>
+                            <th>動作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i< data.length; i++) { %>
+                            <tr>
+                                <td id="userid<%=data[i].id %>">
+                                    <%= data[i].id %>
+                                </td>
+                                <td>
+                                    <%= data[i].name %>
+                                </td>
+                                <td>
+                                    <%= data[i].description %>
+                                </td>
+                                <td>
+                                    <%= data[i].price %>
+                                </td>
+                                <td id="expiredateid">
+                                    <div style="position: absolute;">
+                                    <%= data[i].expiredate %>
+                                </div>
+                                </td>
+                                <td id="picURLid">
+                                    <div style="position: absolute;">
+                                        <%= data[i].picURL %>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <!-- 更改 -->
+                                    <!-- <input type="button" class="btn btn-secondary" data-toggle="modal" data-target="#updateEmp" value="修改" /> -->
+                                    <input type="button" class="btn btn-secondary" data-toggle="modal"
+                                        data-target="#updatePro" value="修改" name="edit"
+                                        onclick="ProEdit('<%=data[i].id%>','<%=data[i].name%>')" />
+                                    <input class="btn btn-danger" type="button" value="Delete" name="delete"
+                                        onclick="ProDelete('<%=data[i].id%>');" />
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+                <% } %>
+        </div>
+    </div>
+    <!-- query table finish -->
+
+
+    
+    <%- include('../../partials/footer') -%>
+    <%- include('../../partials/script') -%>
+
+</body>
+</html>

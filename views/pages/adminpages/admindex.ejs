@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <%- include('../../partials/head') -%>
+        <%- include('../../partials/style') -%>
+            
+</head>
+
+<body>
+    <!--ajax CRUD參考AjaxClient.html-->
+<%- include('../../partials/admin/adminavbar') -%>
+    
+
+<%- include('../../partials/admin/employee') -%>
+            
+            <div id="ProductCtrl" class="tab-pane fade">
+                商品管理
+                <div class="container">
+                    <div class="form-group">
+                        <label for="updateTitle">Title</label>
+                        <input id="updateTitle" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="updatePrice">Price</label>
+                        <input id="updatePrice" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="updateInstock">Instock</label>
+                        <input id="updateInstock" class="form-control" />
+                    </div>
+                    <button onclick="UpdateProducts()">修改</button>
+                </div>
+            </div>
+            <div id="OrderCtrl" class="tab-pane fade">
+                訂單管理
+                <div class="container">
+                    <div class="form-group">
+                        <label for="deleteTitle">Title</label>
+                        <input id="deleteTitle" class="form-control" />
+                    </div>
+                    <button onclick="DeleteProducts()">刪除</button>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <%- include('../../partials/footer') -%>
+            <%- include('../../partials/script') -%>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <%- include('../../partials/head') -%>
+        <%- include('../../partials/style') -%>
+        <script>
+            function Edit(id){
+                window.location.href="account/userEdit?id="+id;
+            }
+            function Delete(id){
+                var cf=confirm("Delete Confirm?");
+                if(cf){
+                    window.location.href="account/userDelete?id="+id;
+                }
+            }
+        </script>
+</head>
+
+<body>
+    <%- include('../../partials/navbar') -%>
+
+        <form class="card" style="width:50%;margin:0 auto;margin-top:8%;">
+            <div class="container" style="margin: 0 auto; width:100%;">
+                <div class="form-group" style="text-align: center;">
+                    <h1 style="border: 3px solid black;">Login or Register</h1>
+                    <label for="email">請輸入Email :</label>
+                    <input class="form-control" style="width: 50%;text-align:center;margin:0 auto;" type="email" id="email" name="email" placeholder="xxx@yyy.com" required>
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <label for="password">請輸入密碼 :</label>
+                    <input class="form-control" style="width: 50%;text-align:center;margin:0 auto;" type="password" id="pwd" name="pwd" required>
+                </div>
+                <div class="form-group" style="text-align:center;">
+                    <button type="submit" class="btn btn-primary" id="login_submit"> Login </button>
+                    <a href="account/register" type="submit" class="btn btn-primary"> Register </a>
+                    <div id="msg" style="color: whitesmoke;"></div>
+                </div>
+            </div>
+        </form>
+        <!-- query table -->
+        <% if(data.length){ %>
+            <!-- 新增 -->
+            <input type="submit" value="Add" onclick="javascript:location.href='account/add'">
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>username</th>
+                        <th>email</th>
+                        <th>password</th>
+                        <th>gender</th>
+                        <th>birthday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i< data.length; i++) { %>
+                        <tr>
+                            <td><%= data[i].id %></td>
+                            <td><%= data[i].username %></td>
+                            <td><%= data[i].email %></td>
+                            <td><%= data[i].password %></td>
+                            <td><%= data[i].gender %></td>
+                            <td><%= data[i].birthday %></td>
+                            <td>
+                                <!-- 更改 -->
+                                <input type="button" value="Edit" name="edit" onclick="Edit('<%=data[i].id%>')" />
+                                <input type="button" value="Delete" name="delete" onclick="Delete('<%=data[i].id%>');"/>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <% } %>
+        <!-- query table finish -->
+
+        <!-- update form start -->
+        <form action="userEdit" method="POST" name="editform" accept-charset="utf-8" id="updateform" style="display: none;">
+            <h1>更改資料</h1>
+            <input type="hidden" name="id" value="<%=data[0].id %>" />
+            <div>
+                <label for="">User ID</label>
+                <input type="text" name="id" value="<%=data[0].id %>" readonly>
+            </div>
+            <div>
+                <label for="">User Name:</label>
+                <input type="text" name="username" placeholder="username" value="<%=data[0].username %>">
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="text" name="email" placeholder="email" value="<%=data[0].email %>">
+            </div>
+            <div>
+                <label for="">Password:</label>
+                <input type="text" name="password" placeholder="password" value="<%=data[0].password %>">
+            </div>
+            <div>
+                <label for="">Gender</label>
+                <input type="text" name="gender" placeholder="gender" value="<%=data[0].gender %>">
+            </div>
+            <div>
+                <label for="">Birthday</label>
+                <input type="text" name="birthday" value="<%=data[0].birthday %>">
+            </div>
+        </form>
+    
+        <!-- update form finish -->
+        <%- include('../../partials/footer') -%>
+        <%- include('../../partials/script') -%>
+            
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <%- include('../../partials/head') -%>
+        <%- include('../../partials/style') -%>
+    </head>
+    <body>
+        <%- include('../../partials/navbar') -%>
+        <h1 class="whiteback">ＮＦＴ主打商品</h1>
+        <div style="text-align: center;">
+        <div class="card mb-3 d-inline-block">
+            <div class="card-body">
+              <p class="card-text" id="ptitle0" value="cat" style="margin:0;">不合群</p>
+              <p style="color:red; margin:0;padding:0;font-size:10px;">(限量5組)</p>
+            </div>
+            <img src="/images/ex1.jpeg" alt="Card image">
+            <div class="card-body" style="margin: 0;padding:0;">
+            <span>價錢：</span><span class="card-text" id="pprice0" value="1000">1000</span><span>.NT</span>
+             <div><select class="form-control" id="pquantity0" style="width: 55px;margin:0 auto;display:inline;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <a href="#" class="btn btn-primary" onclick="addshopcar()">放入購物車</a>
+            </div>
+                
+              <!-- 
+                submit按下後，抓這個品項的數量，名稱(o)
+                使用onclick=function ,用url新增到購物車結帳頁面(shopcar/bill)(o)
+                結帳頁面上做ＣＲＵＤ跟列出所有新增項目(x)
+                依照品項跟數量算出總金額（要在思考怎麼做到）(x)
+                多個品項的時候要怎麼抓數量名稱id會重複，用name?
+              -->
+            </div>
+          </div>
+
+          <div class="card mb-3 d-inline-block">
+            <div class="card-body">
+              <p class="card-text" id="ptitle1" value="cat" style="margin:0;">最後一餐</p>
+              <p style="color:red; margin:0;padding:0;font-size:10px;">(限量3組)</p>
+            </div>
+            <img src="/images/ex2.jpeg" alt="Card image">
+            <div class="card-body" style="padding:0">
+              <span>價錢：</span><span class="card-text" id="pprice1" value="1500">1500</span><span>.NT</span>
+             <div><select class="form-control" id="pquantity1" style="width: 55px;margin:0 auto;display:inline;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <a href="#" class="btn btn-primary" onclick="addshopcar1()">放入購物車</a>
+            </div>
+              
+            </div>
+          </div>
+
+          <div class="card mb-3 d-inline-block">
+            <div class="card-body">
+              <p class="card-text" id="ptitle2" value="cat" style="margin:0;">動起來胖子</p>
+              <p style="color:red; margin:0;padding:0;font-size:10px;">(限量2組)</p>
+            </div>
+            <img src="/images/ex3.gif" alt="Card image">
+            <div class="card-body" style="padding:0">
+              <span>價錢：</span><span class="card-text" id="pprice2" value="2000">2000</span><span>.NT</span>
+             <div><select class="form-control" id="pquantity2" style="width: 55px;margin:0 auto;display:inline;">
+                <option>1</option>
+                <option>2</option>
+              </select>
+              <a href="#" class="btn btn-primary" onclick="addshopcar2()">放入購物車</a>
+            </div>
+              
+            </div>
+          </div>
+
+          <div class="card mb-3 d-inline-block">
+            <div class="card-body">
+              <p class="card-text" id="ptitle3" value="cat" style="margin:0;">社交距離</p>
+              <p style="color:red; margin:0;padding:0;font-size:10px;">(限量1組)</p>
+            </div>
+            <img src="/images/ex4.jpeg" alt="Card image">
+            <div class="card-body" style="padding:0">
+              <span>價錢：</span><span class="card-text" id="pprice3" value="5000">5000</span><span>.NT</span>
+             <div><select class="form-control" id="pquantity3" style="width: 55px;margin:0 auto;display:inline;">
+                <option>1</option>
+              </select>
+              <a href="#" class="btn btn-primary" onclick="addshopcar3()">放入購物車</a>
+            </div>
+            </div>
+          </div>
+          <div class="card mb-3 d-inline-block">
+            <div class="card-body">
+              <p class="card-text" id="ptitle4" value="cat" style="margin:0;">貓Ｘ魚Ｘ機器人海報</p>
+              <p style="color:red; margin:0;padding:0;font-size:10px;">(限量10組)</p>
+            </div>
+            <img src="/images/ex5.png" alt="Card image">
+            <div class="card-body" style="padding:0">
+              <span>價錢：</span><span class="card-text" id="pprice4" value="900">900</span><span>.NT</span>
+             <div>
+               <select class="form-control" id="pquantity4" style="width: 70px;margin:0 auto;display:inline;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+              <a href="#" class="btn btn-primary" onclick="addshopcar4()">放入購物車</a>
+            </div>
+              
+            </div>
+          </div>
+          <div class="card mb-3 d-inline-block">
+            <div class="card-body">
+              <p class="card-text" id="ptitle5" value="cat" style="margin:0;">表情貼ＮＦＴ</p>
+              <p style="color:red; margin:0;padding:0;font-size:10px;">(限量5組)</p>
+            </div>
+            <img src="/images/ex6.png" alt="Card image">
+            <div class="card-body" style="padding:0">
+              <span>價錢：</span><span class="card-text" id="pprice5" value="100">100</span><span>.NT</span>
+             <div>
+               <select class="form-control" id="pquantity5" style="width: 55px;margin:0 auto;display:inline;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <a href="#" class="btn btn-primary" onclick="addshopcar5()">放入購物車</a>
+            </div>
+              
+            </div>
+          </div>
+          <%- include('../../partials/footer') -%>
+        <%- include('../../partials/script') -%>
+        <script>
+         function addshopcar(){
+           var addproduct={
+             title:$('#ptitle0').text(),
+             price:$('#pprice0').text(),
+             quantity:$('#pquantity0').val()
+           };
+           console.log(JSON.stringify(addproduct));
+           $.ajax({
+             type:"POST",
+             url:"http://localhost:1214/shopcar/bill",
+             data:addproduct
+           }).done(function(data){
+             alert("放入購物車");
+           }).fail(function(error){
+             alert(error);
+           });
+         }
+
+         function addshopcar1(){
+          var addproduct={
+            title:$('#ptitle1').text(),
+            price:$('#pprice1').text(),
+            quantity:$('#pquantity1').val()
+          };
+          console.log(JSON.stringify(addproduct));
+          $.ajax({
+            type:"POST",
+            url:"http://localhost:1214/shopcar/bill",
+            data:addproduct
+          }).done(function(data){
+            alert("放入購物車");
+          }).fail(function(error){
+            alert(error);
+          });
+        }
+
+        function addshopcar2(){
+          var addproduct={
+            title:$('#ptitle2').text(),
+            price:$('#pprice2').text(),
+            quantity:$('#pquantity2').val()
+          };
+          console.log(JSON.stringify(addproduct));
+          $.ajax({
+            type:"POST",
+            url:"http://localhost:1214/shopcar/bill",
+            data:addproduct
+          }).done(function(data){
+            alert("放入購物車");
+          }).fail(function(error){
+            alert(error);
+          });
+        }
+
+        function addshopcar3(){
+          var addproduct={
+            title:$('#ptitle3').text(),
+            price:$('#pprice3').text(),
+            quantity:$('#pquantity3').val()
+          };
+          console.log(JSON.stringify(addproduct));
+          $.ajax({
+            type:"POST",
+            url:"http://localhost:1214/shopcar/bill",
+            data:addproduct
+          }).done(function(data){
+            alert("放入購物車");
+          }).fail(function(error){
+            alert(error);
+          });
+        }
+
+        function addshopcar4(){
+          var addproduct={
+            title:$('#ptitle4').text(),
+            price:$('#pprice4').text(),
+            quantity:$('#pquantity4').val()
+          };
+          console.log(JSON.stringify(addproduct));
+          $.ajax({
+            type:"POST",
+            url:"http://localhost:1214/shopcar/bill",
+            data:addproduct
+          }).done(function(data){
+            alert("放入購物車");
+          }).fail(function(error){
+            alert(error);
+          });
+        }
+
+        function addshopcar5(){
+          var addproduct={
+            title:$('#ptitle5').text(),
+            price:$('#pprice5').text(),
+            quantity:$('#pquantity5').val()
+          };
+          console.log(JSON.stringify(addproduct));
+          $.ajax({
+            type:"POST",
+            url:"http://localhost:1214/shopcar/bill",
+            data:addproduct
+          }).done(function(data){
+            alert("放入購物車");
+          }).fail(function(error){
+            alert(error);
+          });
+        }
+        </script>
+    </body>
+    </html>

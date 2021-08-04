@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("/images/backgroundg.jpeg");
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    margin: 3% auto;
+    text-align: center;
+    font-family: serif;
+    font-weight: bolder;
+    font-size: 60px;
+    color:black;
+}
+
+h1.whiteback{
+    margin-top: 8%;
+}
+
+img[alt="Card image"]{
+    width:100%;
+    height:15rem;
+    
+}
+
+div.card.mb-3.d-inline-block{
+    margin:0 auto; 
+    width: 30%; 
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+div.card{
+    margin:50px;
+}
+
+img{
+    width: 90px;
+}
+
+td{
+    text-align: center;
+}
+
+label{
+    color:black;
+}
+
+
+/*----------------*/
+table{
+    background-color: whitesmoke;
+}
+
+.ssideNav{
+    background-color: whitesmoke;
+    
+}
+
+.popup{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.popup .popuptext{
+    visibility: hidden;
+    width: 200px;
+    background-color: whitesmoke;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popup .popuptext::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.popup .show{
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation:fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.whiteback{
+    background-color: whitesmoke;
+    border: 3px solid black;
+    border-radius:30px;
+    width: 90%;
+    font-family: serif;
+    /* transform: rotate(2deg); */
+    /* transform: rotate(-2deg); */
+}
+
+footer{
+    background-color: rgb(84,97,74);
+    color: whitesmoke;
+}
+
+footer .footerset{
+    font-size:5pt;
+    margin:0;
+    margin-left: 30%;
+}
+
+footer div .row{
+    margin:5px;
+}
+
+.sidebarmenu{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding: 0 0 0 2px;
+}
+
+.sidebarmenu.active{
+    background: antiquewhite;
+}
+.sideNav{
+    height: 100vh;
+    width: 0;
+    position: absolute;
+    z-index: 2;
+    top: 60px;
+    left: 0;
+    background-color: rgb(34,37,41);
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    text-align: center;
+    padding-top: 0;
+}
+.sideNav a{
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: whitesmoke;
+    display: block;
+    transition: 0.3s;
+}
+.sideNav a:hover{
+    color: blueviolet;
+}
+/* 旋轉門ＣＳＳ */
+img.d-block.w-100{
+
+    width:90%;
+    height: 80vh;
+}
+
+#carouselExampleCaptions.carousel.slide{
+    margin: 0 auto;
+    width:90%;
+    margin:8% auto;
+    margin-bottom: 3%;
+}
+
+
+/* Sidebar css */
+.carousel-control-prev{
+    margin-left: -4%;
+}
+
+.carousel-indicators{
+    margin-left: 15%;
+}
+.carousel-control-next{
+    margin-right: -4%;
+}
+
+.border-end {
+    border-right: 1px solid black !important;
+  }
+  
+.border-end-0 {
+    border-right: 0 !important;
+  }
+
+#sidebar-wrapper{
+    width: 10%;
+    height: 100vh;
+    position: fixed;
+    margin-top:-35px;
+}
+
+.sidebar-heading.border-bottom.bg-light{
+    height: 50px;
+}
+
+/* public use */
+h3{
+    font-family: '標楷體';
+}
+.textcenter{
+    margin: 0 auto;
+}
+
+/* admin CSS */
+#admin-sidebar-wrapper{
+    width: 10%;
+    position: fixed;
+    top:15%;
+    align-items: center;
+    text-align: center;
+}
+
+.tabposition{
+    width:80%;
+    margin-left:15%;
+    margin-top: 8%;
+}
+
+#EmployeeCtrl,#MemberCtrl,#ProductCtrl,#OrderCtrl{
+    background-color: whitesmoke;
+    /* border: 1px solid black;
+    border-collapse: collapse; */
+    height: 80vh;
+    overflow: scroll;
+    margin-bottom: 30px;
+}
+
+/* Admin table */
+
+table{
+    width:100%;
+    margin-bottom: 0;
+    margin-top: 10px;
+    border: 3px solid black;
+    padding: 0;
+    border-collapse: collapse;
+    font-family: '標楷體';
+    align-items: center;
+    text-align: center;
+}
+
+thead tr{
+    border: 2px double black;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+
+/* employee crud css */
+
+#addEmp,#updateEmp,#addMem,#updateMem{
+    width: 30%;
+    height: 91%;
+    margin-left:35%;
+    margin-top:2%;
+    background-color: whitesmoke;
+    border: 5px solid rgb(46,78,111);
+    border-radius: 5px;
+    /* padding: 5px; */
+    text-align: center;
+}
+
+div.modal-dialog{
+    width: 100%;
+    height: 90%;
+    margin:0;
+}
+
+div.modal-footer{
+    height:50px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+div.modal-header{
+    height: 60px;
+    align-items: center;
+}
+
+input#saveid{
+    border-style: none;
+}
+
+/* member crud css */
+td#birth,td#expiredateid{
+    width:150px;
+    height: 5px;
+    overflow:hidden;
+    position: relative;
+    line-height: 38px;
+}
+
+#picURLid{
+    width:150px;
+    height: 5px;
+    overflow:scroll;
+    position: relative;
+    line-height: 38px;
+}
+
+/* 操作頁面樣式管理 */
+div.rows.space-around{
+    margin:10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: '標楷體';
+    align-items: center;
+    padding: 5px;
+}
+
+table{
+    align-items: center;
+    text-align: center;
+    font-size: 14pt;
+}
