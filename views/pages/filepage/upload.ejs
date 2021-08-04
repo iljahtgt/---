@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <%- include('../../partials/head') -%>
+        <%- include('../../partials/styles') -%>
+    </head>
+    <body>
+        <%- include('../../partials/navbar') -%>
+        <h1>upload page</h1>
+        <div class="card">
+            <div class="card-body">
+        <form action="/file/upload" method="POST" enctype="multipart/form-data">
+            <div class="container">
+                <label for="file1">選擇檔案</label>
+                <div class="form-group">
+                    <input type="file" name="file1" multiple="multiple" accept="image/*" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">上傳</button>
+                </div>
+            </div>
+
+        </form>
+        </div>
+        </div>
+        <%- include('../../partials/scripts') -%>
+    </body>
+    </html>
