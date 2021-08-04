@@ -1,0 +1,41 @@
+新建project資料夾
+使用terminal
+輸入npm init建立基本環境
+輸入npm install express --save
+    npm install ejs --save
+    npm install body-parser  安裝套件
+
+建立主檔案：
+app.js
+
+設定app.js:
+    參考多個套件
+    var http = require('http');...
+    設定view engine
+    app.set('view engine','ejs');
+    放入引用資料夾
+    app.use(express.static(path.join(__dirname,'public'))); ...
+    放入引用路徑
+    app.use("/",router); ...
+    app.use("/*",function(req,res){
+        res.render("pages/error")
+    });
+    使用port
+    app.listen(port)
+    console.log(`server port ${port}`);
+
+建立基本資料夾：
+public
+routes
+views
+
+建立分資料夾：
+public：
+images:存放圖片
+javascript:存放js
+styles:存放css格式
+
+
+views:
+pages:存放基本網頁頁面
+partials:存放網頁的共用元素
